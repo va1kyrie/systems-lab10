@@ -8,6 +8,7 @@ import datetime
 import json
 import binascii
 import base64
+import struct
 
 # python script that counts to 10 by passing a value between the xDot and the pivot server
 
@@ -21,8 +22,11 @@ pl1 = "{\"data\":\""
 pl2 = "\",\"deveui\":\"00-80-00-00-04-00-51-87\"}"
 
 
-pivread = True
-
+def hexes(bstr):
+    hx = []
+    for b in bstr:
+        hx.append(struct.unpack('!f', b.decode('hex'))[0])
+    return hx
 #pivot client stuff
 def on_message(client, userdata, msg):
     pl = ""
@@ -31,11 +35,16 @@ def on_message(client, userdata, msg):
     # dj = json.dumps(pl)
     # js = json.load(dj)
     info = base64.b64decode(json.loads(msg.payload)['data'])
-    print('info = ' + info)
-
+    strs = info.split('&');
+    print(strs)
+    #print('info = ' + string(info))
+    fls = hexes(strs)
+    for f in fls:
+        print('f' + string(f))
     # need to convert the hex into floats
     # get 96 hex numbers: each set of 4 is a float number
     #also need to check the endianness
+
 
     #dump = open("./light.txt",mode='a+')
     #tm = time.ctime()
