@@ -39,12 +39,13 @@ def on_message(client, userdata, msg):
     # js = json.load(dj)
     info = base64.b64decode(json.loads(msg.payload)['data'])
     strs = info.split('&');
-    print(strs)
+    #print(strs)
     #print('info = ' + string(info))
 
     # need to convert the hex into floats
     # get 96 hex numbers: each set of 4 is a float number
     #also need to check the endianness
+    dump = open("./light.txt",mode='a+')
 
     dump = open("./light.txt",mode='a+')
     tm = time.ctime()
