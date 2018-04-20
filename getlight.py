@@ -22,11 +22,14 @@ pl1 = "{\"data\":\""
 pl2 = "\",\"deveui\":\"00-80-00-00-04-00-51-87\"}"
 
 
+'''
 def hexes(bstr):
     hx = []
     for b in bstr:
         hx.append(struct.unpack('!f', b.decode('hex'))[0])
     return hx
+
+'''
 #pivot client stuff
 def on_message(client, userdata, msg):
     pl = ""
