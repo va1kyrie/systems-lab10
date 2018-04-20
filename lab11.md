@@ -2,9 +2,9 @@
 Helen Dougherty & Robert Neubauer
 
 ## 1: Average Daily Power Budget for 6 months
-(182.5 days * (24 hr/ day) * (350 mA) ) / 182.5 = 8400 mA/day (max)
-(182.5 days * (24hr/day) * 210mA) / 182.5 = 5048.3 mA/day (low temp)
-
+(365/2) * 24 = 4380
+(350/4380) = .08mA/hr => 1.92mA/day
+(210/4380) = .048mA/hr => 1.152mA/day
 ## 2: Measuring System Current
 
 ## 3: Processor Sleep mode
