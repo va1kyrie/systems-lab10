@@ -38,17 +38,17 @@ def on_message(client, userdata, msg):
     strs = info.split('&');
     print(strs)
     #print('info = ' + string(info))
-    fls = hexes(strs)
-    for f in fls:
-        print('f' + string(f))
+
     # need to convert the hex into floats
     # get 96 hex numbers: each set of 4 is a float number
     #also need to check the endianness
 
-
-    #dump = open("./light.txt",mode='a+')
-    #tm = time.ctime()
-    #dump.write('\n' + tm)
+    dump = open("./light.txt",mode='a+')
+    tm = time.ctime()
+    dump.write('\n' + tm)
+    for s in strs:
+        dump.write('\n' + str(s))
+    dump.close()
 
     #print('temp  = ' + str(t))
     #print('pressure = ' + str(p))
