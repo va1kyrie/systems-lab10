@@ -45,7 +45,6 @@ def on_message(client, userdata, msg):
     # need to convert the hex into floats
     # get 96 hex numbers: each set of 4 is a float number
     #also need to check the endianness
-    dump = open("./light.txt",mode='a+')
 
     dump = open("./light.txt",mode='a+')
     tm = time.ctime()
