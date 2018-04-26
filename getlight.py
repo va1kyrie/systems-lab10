@@ -82,6 +82,6 @@ def measure():
     hrs = 0
     while hrs < 49:
         print('measuring data')
-        time.sleep(3600)
+        #time.sleep(3600)
     print('measuring finished')
     pivot.loop_stop()
